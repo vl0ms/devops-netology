@@ -8,4 +8,4 @@
 	-файлы override.tf и override.tf.json и любые файлы по шаблонам *_override.tf и *_override.tf.json  
 	-конфишурационные файлы .terraformrc и terraform.rc  
 # new string
-# PyCharm commit
+# PyCharm test commit
