@@ -1,0 +1,22 @@
+п1. node_exporter.service - Node Exporter
+     Loaded: loaded (/etc/systemd/system/node_exporter.service; enabled; vendor preset: enabled)
+     Active: active (running) since Wed 2021-02-20 08:23:05 UTC; 1min 10s ago
+   Main PID: 1257 (node_exporter)
+      Tasks: 3 (limit: 996)
+     Memory: 4.0M
+     CGroup: /system.slice/node_exporter.service
+             └─1257 /usr/sbin/node_exporter --collector.textfile.directory /var/lib/node_exporter/textfile_collect>
+	Сделал частично сам, частично по мануалу по ссылке https://www.shellhacks.com/ru/prometheus-node-exporter-install-config-ubuntu-centos/
+п2. --collector.cpu            Enable the cpu collector (default: enabled).
+	--collector.cpufreq        Enable the cpufreq collector (default: enabled).
+    --collector.diskstats      Enable the diskstats collector (default: enabled).
+	--collector.filesystem     Enable the filesystem collector (default: enabled).
+    --collector.hwmon          Enable the hwmon collector (default: enabled).
+	--collector.loadavg        Enable the loadavg collector (default: enabled).
+	--collector.meminfo        Enable the meminfo collector (default: enabled).
+	--collector.netstat        Enable the netstat collector (default: enabled).
+п3. ознакомился, пришло время отказываться от munin на паре своих серверов
+п4. да: [    0.000000] Hypervisor detected: Microsoft Hyper-V
+п5. cat /proc/sys/fs/nr_open покажет максимальное кол-во возможно открытых файловых дескрипторов, но ulimit -n покажет число значительней меньше
+п6. слайд 24 презентации, с заменой /bin/bash на sleep 1h
+п7. скрипт определения функции с таким же вложенным определением функции(бесконечный цикл), ограничить можно лимитом на создаваеме процессы пользователем (ulimit -u)
