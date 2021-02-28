@@ -1,0 +1,22 @@
+п1. изучил
+п2. нет. один и тот же inode, просто разные имена файлов для одного объекта
+п3. приложенный конфиг с hyperv не дружит, пришлось вручную через оснастку создавать диски, по 2Гб
+п4. sudo fdisk /dev/sdb - n - p - 1 - 2048 - +1700M - n - p - 2 - default - default - w
+п5. sudo sfdisk -d /dev/sdb > part-table.sdb
+	sudo sfdisk /dev/sdс < part-table.sdb
+п6. sudo mdadm --create --verbose /dev/md0 -l 1 -n 2 /dev/sdb1 /dev/sdc1
+п7. sudo mdadm --create --verbose /dev/md1 -l 0 -n 2 /dev/sdb2 /dev/sdc2
+п8. sudo pvcreate /dev/md0 && sudo pvcreate /dev/md1
+п9. sudo vgcreate VolGroup0 /dev/md0 && sudo vgcreate VolGroup1 /dev/md1
+п10.sudo lvcreate -L 100M -n 100MB VolGroup1
+п11.sudo mkfs.ext4 /dev/VolGroup1/100MB
+п12.sudo mkdir /tmp/new && sudo mount /dev/VolGroup1/100MB /tmp/new
+п13.sudo wget https://mirror.yandex.ru/ubuntu/ls-lR.gz -O /tmp/new/test.gz && ls -la /tmp/new
+п14.NEED LINK TO PICTURE 3.5-p14.png
+п15.0
+п16.sudo pvmove /dev/md1 /dev/md0
+п17.sudo mdadm /dev/md0 --fail /dev/sdc1
+	[ 5132.632968] md/raid1:md0: Disk failure on sdc1, disabling device.
+                   md/raid1:md0: Operation continuing on 1 devices.
+п18.0
+п19.дестрой уничтожает виртуальную машину
