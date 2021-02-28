@@ -12,7 +12,7 @@
 п11.sudo mkfs.ext4 /dev/VolGroup1/100MB
 п12.sudo mkdir /tmp/new && sudo mount /dev/VolGroup1/100MB /tmp/new
 п13.sudo wget https://mirror.yandex.ru/ubuntu/ls-lR.gz -O /tmp/new/test.gz && ls -la /tmp/new
-п14.NEED LINK TO PICTURE 3.5-p14.png
+п14.https://github.com/vl0ms/devops-netology/blob/main/homework/3.5-p14.png
 п15.0
 п16.sudo pvmove /dev/md1 /dev/md0
 п17.sudo mdadm /dev/md0 --fail /dev/sdc1
