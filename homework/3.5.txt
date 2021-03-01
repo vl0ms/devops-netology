@@ -7,10 +7,10 @@
 п6. sudo mdadm --create --verbose /dev/md0 -l 1 -n 2 /dev/sdb1 /dev/sdc1
 п7. sudo mdadm --create --verbose /dev/md1 -l 0 -n 2 /dev/sdb2 /dev/sdc2
 п8. sudo pvcreate /dev/md0 && sudo pvcreate /dev/md1
-п9. sudo vgcreate VolGroup0 /dev/md0 && sudo vgcreate VolGroup1 /dev/md1
-п10.sudo lvcreate -L 100M -n 100MB VolGroup1
-п11.sudo mkfs.ext4 /dev/VolGroup1/100MB
-п12.sudo mkdir /tmp/new && sudo mount /dev/VolGroup1/100MB /tmp/new
+п9. sudo vgcreate VolGroup0 /dev/md0 /dev/md1
+п10.sudo lvcreate -L 100M -n 100MBlv VolGroup0 /dev/md1
+п11.sudo mkfs.ext4 /dev/VolGroup0/100MBlv
+п12.sudo mkdir /tmp/new && sudo mount /dev/VolGroup0/100MBlv /tmp/new
 п13.sudo wget https://mirror.yandex.ru/ubuntu/ls-lR.gz -O /tmp/new/test.gz && ls -la /tmp/new
 п14.https://github.com/vl0ms/devops-netology/blob/main/homework/3.5-p14.png
 п15.0
