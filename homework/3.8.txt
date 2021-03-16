@@ -3,9 +3,9 @@
 2. на все хосты которые будут использоваться для плавающего ip нужно установить keepalived(netology1 и netology2),
    так же по условиям задания добавил хост balancer, без nginx чтобы не было возможности использовать конфигурационный файл из презентации.
    балансерами будут выступать хосты balancer(172.28.128.5) и netology1 (172.28.128.5), реалмами будут netology2 и netology3
-   конфиг мастера(balancer) keepalived по ссылке:
-   конфиг слейва(netology1) keepalived по ссылке:
-   скриншот VIP на balancer: 
-   скриншот VIP на netology1 после vagrant halt balancer на хосте:
+   конфиг мастера(balancer) keepalived по ссылке: https://github.com/vl0ms/devops-netology/blob/main/homework/3.8-keepalived-data/master-keepalived.conf
+   конфиг слейва(netology1) keepalived по ссылке: https://github.com/vl0ms/devops-netology/blob/main/homework/3.8-keepalived-data/slave-keepalived.conf
+   скриншот VIP на balancer: https://github.com/vl0ms/devops-netology/blob/main/homework/3.8-keepalived-data/VIP-balancer.png
+   скриншот VIP на netology1 после vagrant halt balancer на хосте: https://github.com/vl0ms/devops-netology/blob/main/homework/3.8-keepalived-data/VIP-netology1.png
    судя по скриншоту, VIP прееехал на другой хост netology1
 3. более 5 адресов
