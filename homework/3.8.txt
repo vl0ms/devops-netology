@@ -1,0 +1,11 @@
+1. http://www.austintek.com/LVS/LVS-HOWTO/HOWTO/LVS-HOWTO.ipvsadm.html#ActiveConn
+   существует только два вида соединения: ActiveConn - если соединение установлено и InActConn любой другой тип соединения(ожидание, закрыто и т.д.)
+2. на все хосты которые будут использоваться для плавающего ip нужно установить keepalived(netology1 и netology2),
+   так же по условиям задания добавил хост balancer, без nginx чтобы не было возможности использовать конфигурационный файл из презентации.
+   балансерами будут выступать хосты balancer(172.28.128.5) и netology1 (172.28.128.5), реалмами будут netology2 и netology3
+   конфиг мастера(balancer) keepalived по ссылке:
+   конфиг слейва(netology1) keepalived по ссылке:
+   скриншот VIP на balancer: 
+   скриншот VIP на netology1 после vagrant halt balancer на хосте:
+   судя по скриншоту, VIP прееехал на другой хост netology1
+3. более 5 адресов
