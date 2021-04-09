@@ -1,0 +1,26 @@
+5.3. Контейнеризация на примере Docker
+https://github.com/netology-code/virt-homeworks/tree/master/05-virt-03-docker-usage
+
+1.
+    1. Высоконагруженное монолитное java веб-приложение - виртуальная машина или железный сервер
+    2. Go-микросервис для генерации отчетов - docker
+    3. Nodejs веб-приложение - docker
+    4. Мобильное приложение c версиями для Android и iOS - виртуальная машина
+    5. База данных postgresql используемая, как кэш - виртуальная машина
+    6. Шина данных на базе Apache Kafka - виртуальная машина
+    7. Очередь для Logstash на базе Redis - виртуальная машина
+    8. Elastic stack для реализации логирования продуктивного веб-приложения - три ноды elasticsearch, два logstash и две ноды kibana - виртуальная машина
+    9. Мониторинг-стек на базе prometheus и grafana - docker 
+    10. Mongodb, как основное хранилище данных для java-приложения - виртуальная машина или железный сервер
+    11. Jenkins-сервер - docker
+Для высоконагруженных систем и сервисам с критическими данными лучше использовать виртуальные машины или физические сервера(1, 4, 5, 6, 10). 
+Остальные прекрасно будут работать в докере
+
+2. https://hub.docker.com/r/vl0ms/hw-apache2
+3. sudo su
+   cd /root/ && mkdir info 
+   docker run -d -it -v /root/info:/share/info --name centos-1 centos:latest
+   docker run -d -it -v /root/info:/info --name debian-1 debian:latest
+   docker exec -d centos-1 touch /share/info/centos-file
+   touch info/host-file
+   docker exec -it debian-1 ls /info
