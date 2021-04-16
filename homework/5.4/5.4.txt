@@ -1,0 +1,8 @@
+5.4 Практические навыки работы с Docker
+https://github.com/netology-code/virt-homeworks/tree/master/05-virt-04-docker-practical-skills
+1.
+	https://github.com/vl0ms/devops-netology/blob/main/homework/5.4/1/Dockerfile.txt
+	https://github.com/vl0ms/devops-netology/blob/main/homework/5.4/1/arch-console-screen.png
+	https://hub.docker.com/repository/docker/vl0ms/hw1-arch
+2.
+3.
