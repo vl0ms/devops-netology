@@ -1,0 +1,11 @@
+FROM node:latest
+
+ARG VCAP_APP_HOST=0.0.0.0
+ENV VCAP_APP_HOST="${VCAP_APP_HOST}"
+
+RUN git clone https://github.com/simplicitesoftware/nodejs-demo.git
+WORKDIR /nodejs-demo
+RUN npm install
+
+EXPOSE 3000
+ENTRYPOINT npm start && /bin/bash
