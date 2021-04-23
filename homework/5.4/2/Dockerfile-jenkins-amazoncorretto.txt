@@ -6,7 +6,7 @@ RUN yum update -y && \
 RUN wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins.io/redhat-stable/jenkins.repo
 RUN rpm --import http://pkg.jenkins.io/redhat-stable/jenkins.io.key
 
-RUN yum update && \
+RUN yum update -y && \
     yum install jenkins -y
 
 EXPOSE 8080
