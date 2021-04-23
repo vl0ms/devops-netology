@@ -1,6 +1,6 @@
 FROM amazoncorretto:latest
 
-RUN yum update && \
+RUN yum update -y && \
     yum install -y git wget initscripts
 
 RUN wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins.io/redhat-stable/jenkins.repo
