@@ -8,5 +8,15 @@ https://github.com/netology-code/virt-homeworks/tree/master/06-db-03-mysql
 	https://github.com/vl0ms/devops-netology/blob/main/homework/6.3/mysql-select.png
 	
 2.
+	CREATE USER 'test'@'localhost'
+	IDENTIFIED WITH mysql_native_password BY 'test-pass'
+	PASSWORD EXPIRE INTERVAL 180 DAY
+	FAILED_LOGIN_ATTEMPTS 3;
+  
+	ALTER USER 'test'@'localhost' ATTRIBUTE '{"fname": "James", "lname": "Pretty"}';
+	ALTER USER 'test'@'localhost' WITH MAX_QUERIES_PER_HOUR 100;
 	
-	
+	GRANT SELECT ON test_db.* TO 'test'@'localhost';
+  
+	SELECT * FROM INFORMATION_SCHEMA.USER_ATTRIBUTES WHERE USER = "test";
+	https://github.com/vl0ms/devops-netology/blob/main/homework/6.3/mysql-user-att.png
