@@ -1,0 +1,9 @@
+6.3
+https://github.com/netology-code/virt-homeworks/tree/master/06-db-03-mysql
+
+1. 
+	docker run -d --name=mysql-netology --env="MYSQL_ROOT_PASSWORD=qwe123" -p 33066:3306 --volume=/root/docker/mysql-data:/var/lib/mysql mysql:latest
+	docker exec -it mysql-netology bash
+	----ссылка на скриншот mysql \s----
+	----ссылка на скриншот select * from orders where price >300;----
+	
