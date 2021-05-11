@@ -32,3 +32,20 @@ https://github.com/netology-code/virt-homeworks/tree/master/06-db-03-mysql
 	https://github.com/vl0ms/devops-netology/blob/main/homework/6.3/mysql-profiles-myisam-innodb.png
 	SET profiling = 0;
 	
+4.
+	Скорость IO важнее сохранности данных
+	innodb_flush_log_at_trx_commit=2
+	
+    Нужна компрессия таблиц для экономии места на диске
+	innodb_file_format=Barracuda
+	
+    Размер буффера с незакомиченными транзакциями 1 Мб
+	innodb_log_buffer_size=1Mb
+	
+    Буффер кеширования 30% от ОЗУ
+	innodb_buffer_pool_size=310Kb
+	
+    Размер файла логов операций 100 Мб
+	innodb_log_file_size=100Mb
+	
+	
