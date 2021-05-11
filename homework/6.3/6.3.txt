@@ -29,5 +29,6 @@ https://github.com/netology-code/virt-homeworks/tree/master/06-db-03-mysql
 	ALTER TABLE orders ENGINE = MyISAM;
 	ALTER TABLE orders ENGINE = InnoDB;
 	SHOW PROFILES;
+	https://github.com/vl0ms/devops-netology/blob/main/homework/6.3/mysql-profiles-myisam-innodb.png
 	SET profiling = 0;
 	
