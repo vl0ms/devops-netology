@@ -1,0 +1,44 @@
+6.4
+https://github.com/netology-code/virt-homeworks/tree/master/06-db-04-postgresql
+
+1.
+	docker run -d --name=psql -e POSTGRES_PASSWORD=qwe123 -e PGDATA=/var/lib/postgresql/data/pgdata -p 54321:5432 --volume=/root/docker/pgsql-data:/var/lib/postgresql/data postgres:latest
+	docker exec -it psql bash
+	psql -Upostgres -W
+	
+	
+    вывода списка БД
+	\l
+    подключения к БД
+	\c
+    вывода списка таблиц
+	\dt
+    вывода описания содержимого таблиц
+	\d
+    выхода из psql
+	\q
+	
+2.
+	psql -U postgres -d test_database -1 -f test_database.sql
+	psql -Upostgres -W test_database
+	ANALYZE VERBOSE orders;
+	select * from pg_stats where tablename='orders';
+	последний запрос делал через dbeaver, так как вывод разъехался и не был читаемым,
+	но судя по выводу в dbeaver столбец avg_width наибольшее среднее значение 16kb у title
+	
+3.	
+	create table orders_1 (
+	check ( price>499 )
+	) inherits (orders);
+
+	create table orders_2 (
+	check ( price<=499 )
+	) inherits (orders);
+
+	судя по статье https://habr.com/ru/company/oleg-bunin/blog/309330/
+	ручное разбиение можно было исключить написав пару правил (слайд 24, 26)
+	
+4.
+	pg_dump -Upostgres -d test_database > test_db_dump.sql
+	Как бы вы доработали бэкап-файл, чтобы добавить уникальность значения столбца title для таблиц test_database?
+	можно добавить уникальный индекс CREATE UNIQUE INDEX, например с хэшем
