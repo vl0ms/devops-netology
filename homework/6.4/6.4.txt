@@ -25,6 +25,8 @@ https://github.com/netology-code/virt-homeworks/tree/master/06-db-04-postgresql
 	select * from pg_stats where tablename='orders';
 	последний запрос делал через dbeaver, так как вывод разъехался и не был читаемым,
 	но судя по выводу в dbeaver столбец avg_width наибольшее среднее значение 16kb у title
+	Дополнение
+	select max(avg_width) from pg_stats where tablename='orders';
 	
 3.	
 	create table orders_1 (
