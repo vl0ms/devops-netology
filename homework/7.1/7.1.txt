@@ -4,6 +4,6 @@ https://github.com/netology-code/virt-homeworks/tree/master/07-terraform-01-intr
 1.
 
 2.
-
+	https://github.com/vl0ms/devops-netology/blob/main/homework/7.1/pic2.png
 3.
-
+	https://github.com/vl0ms/devops-netology/blob/main/homework/7.1/pic3.png
