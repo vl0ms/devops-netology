@@ -1,0 +1,9 @@
+7.1
+https://github.com/netology-code/virt-homeworks/tree/master/07-terraform-01-intro
+
+1.
+
+2.
+
+3.
+
