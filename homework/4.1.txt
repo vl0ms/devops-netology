@@ -1,0 +1,30 @@
+4.1
+https://github.com/netology-code/sysadm-homeworks/tree/master/04-script-01-bash
+
+1.
+    c=a+b - так как это строчные данные
+    d=1+2 - строчные данные с подстановкой переменных
+    е=3   - арифметическая операция $(( )) с подстановкой числовых значений переменных
+
+2.
+    добавить строку с интерпретатором в начало скрипта #!/usr/bin/env bash
+    пропущена скобка ) в первой строке скрипта
+    для корректного завершения скрипта нужно использовать констукцию if then break
+    Правильный скрипт ниже:
+      #!/usr/bin/env bash
+      while ((1==1))
+        do
+          curl https://localhost:4757
+      if (($? != 0))
+        then
+          date >> curl.log
+      else
+        break
+      fi
+      done
+
+3.
+      https://github.com/vl0ms/devops-netology/blob/main/homework/script.bash
+
+4.
+      https://github.com/vl0ms/devops-netology/blob/main/homework/upd-script.bash
