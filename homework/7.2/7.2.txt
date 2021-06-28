@@ -1,0 +1,11 @@
+7.2
+https://github.com/netology-code/virt-homeworks/tree/master/07-terraform-02-syntax
+
+1.
+7.2-1
+
+2.
+Вывод команды terraform plan > terraform.plan
+
+При помощи Packer можно создавать свои ami-образы для aws
+https://github.com/vl0ms/devops-netology/tree/main/terraform
