@@ -3,24 +3,24 @@ https://github.com/netology-code/virt-homeworks/tree/master/06-db-05-elasticsear
 
 1.
 Файлы необходимые для сбрки образа находятся в каталоге Dockerfiles 
-**LINK**
+https://github.com/vl0ms/devops-netology/tree/main/homework/6.5/Dockerfiles
 docker build -t vl0ms/elastic:7 .
 docker run -d -p 9200:9200 -p 9300:9300 --name elasticsearch vl0ms/elastic:7
 при первом старте появилась ошибка 
 bootstrap check failure [1] of [1]: max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]
 на хост машине сделал sysctl -w vm.max_map_count=262144
 после увеличения контейнер стартанул без проблем 
-6.5-1
+https://github.com/vl0ms/devops-netology/blob/main/homework/6.5/6.5-1.png
 ссылка на образ https://hub.docker.com/repository/docker/vl0ms/elastic
 
 2.
 создание индексов
-6.5-2
+https://github.com/vl0ms/devops-netology/blob/main/homework/6.5/6.5-2.png
 список индексов получаем командой
-6.5-3
+https://github.com/vl0ms/devops-netology/blob/main/homework/6.5/6.5-3.png
 Статус yellow у индекса обозначает отсутствие реплик(кол-во реплик указано в задании), так как нода у нас одна.
 состояние кластера 
-6.5-4
+https://github.com/vl0ms/devops-netology/blob/main/homework/6.5/6.5-4.png
 И из-за отсутствующих реплик статус кластера изменился на yellow
 Индексы удаляем командой
 curl -X DELETE "localhost:9200/_all?pretty"
@@ -28,19 +28,19 @@ curl -X DELETE "localhost:9200/_all?pretty"
 3.
 Каталог /var/lib/elasticsearch/snapshots создан на этапе сборки образа, и добавлен в конфигурационный файл elasticsearch.yml
 регистрируем репозиторий для спапшотов
-6.5-5
+https://github.com/vl0ms/devops-netology/blob/main/homework/6.5/6.5-5.png
 создание индекса и список индексов
-6.5-6
+https://github.com/vl0ms/devops-netology/blob/main/homework/6.5/6.5-6.png
 создаем снапшот командой
 curl -X PUT "localhost:9200/_snapshot/netology_backup/snapshot_cluster?wait_for_completion=true&pretty"
 и выводим список файлов в каталоге со снапшотами
 docker exec -it elasticsearch ls -l /var/lib/elasticsearch/snapshots
-6.5-7
+https://github.com/vl0ms/devops-netology/blob/main/homework/6.5/6.5-7.png
 удаление индекса
 curl -X DELETE "localhost:9200/test?pretty"
 создание нового индекса и отображение списка индексов
-6.5-8
+https://github.com/vl0ms/devops-netology/blob/main/homework/6.5/6.5-8.png
 восстановление индекса из снапшота
 curl -X POST "localhost:9200/_snapshot/netology_backup/snapshot_cluster/_restore?pretty"
 и список индексов
-6.5-9
+https://github.com/vl0ms/devops-netology/blob/main/homework/6.5/6.5-9.png
