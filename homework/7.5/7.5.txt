@@ -1,0 +1,45 @@
+7.5
+https://github.com/netology-code/virt-homeworks/tree/master/07-terraform-05-golang
+
+1.
+Напишите программу для перевода метров в футы (1 фут = 0.3048 метр). Можно запросить исходные данные у пользователя, а можно статически задать в коде. 
+Для взаимодействия с пользователем можно использовать функцию Scanf:
+
+package main
+import "fmt"
+func main() {
+    fmt.Print("Enter a number: ")
+    var number float64
+    fmt.Scanf("%f", &number)
+    output := number * 0.3048
+    fmt.Println(output)
+}
+
+2.Напишите программу, которая найдет наименьший элемент в любом заданном списке, например:
+x := []int{48,96,86,68,57,82,63,70,37,34,83,27,19,97,9,17,}
+
+package main
+import "fmt"
+func main() {
+	array := []int{48,96,86,68,57,82,63,70,37,34,83,27,19,97,9,17,}
+ 	minNum := array[0]
+ 	for _, element := range array {
+		if element < minNum {
+			minNum = element
+		}
+	}
+	fmt.Println("Minimal number:", minNum)
+}
+
+3.
+Напишите программу, которая выводит числа от 1 до 100, которые делятся на 3. То есть (3, 6, 9, …).
+
+package main
+import "fmt"
+func main() {
+    for t := 1; t < 100; t++ {
+        if t %3 == 0 {
+            fmt.Println(t)
+        }
+    }
+}
