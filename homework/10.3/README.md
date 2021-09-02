@@ -18,19 +18,19 @@
 Создайте Dashboard и в ней создайте следующие Panels:
 - Утилизация CPU для nodeexporter (в процентах, 100-idle)
 
-    100 - avg(irate(node_cpu_seconds_total{mode="idle"}[5m])) * 100
+    `100 - avg(irate(node_cpu_seconds_total{mode="idle"}[5m])) * 100`
 
 - CPULA 1/5/15
 
-    node_load1, node_load5, node_load15 - CPULA 1/5/15
+    `node_load1, node_load5, node_load15 - CPULA 1/5/15`
 
 - Количество свободной оперативной памяти
 
-    node_memory_MemAvailable_bytes /1048576
+    `node_memory_MemAvailable_bytes /1048576`
 
 - Количество места на файловой системе
 
-    node_filesystem_avail_bytes{fstype!='tmpfs'} / node_filesystem_size_bytes * 100
+    `node_filesystem_avail_bytes{fstype!='tmpfs'} / node_filesystem_size_bytes * 100`
 
 Для решения данного ДЗ приведите promql запросы для выдачи этих метрик, а также скриншот получившейся Dashboard.
 
